@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GarbageSort+ | Eco Classifier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-light: linear-gradient(135deg, #ffe0f0, #e6ffe9);
+      --text-dark: #212121;
+      --text-light: #fafafa;
+      --primary-grad: linear-gradient(to right, #43cea2, #ec6ead);
+      --accent-grad: linear-gradient(to right, #ec407a, #ab47bc);
+      --hover-bg: #ffffff66;
+    }
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    header, footer {
+      background: var(--primary-grad);
+      color: #ffffff;
+      text-align: center;
+      padding: 25px 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 3px #33333399;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    nav button {
+      background: #ffffff33;
+      border: 1.8px solid #ffffff;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1em;
+      transition: all 0.3s ease;
+    }
+    nav button:hover {
+      background: var(--hover-bg);
+      box-shadow: 0 0 12px #ff4081aa;
+    }
+    main {
+      padding: 40px 20px;
+    }
+    section {
+      margin-bottom: 60px;
+      background: #ffffffcc;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    section:hover {
+      transform: translateY(-5px);
+    }
+    h2 {
+      color: #00796b;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: #222;
+      color: #eee;
+      padding: 30px;
+      text-align: center;
+      font-size: 1em;
+    }
+    .upload-box {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .upload-box input[type="file"] {
+      padding: 12px;
+      border-radius: 12px;
+      background: var(--accent-grad);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .upload-box button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: none;
+      background: #43cea2;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .upload-box button:hover {
+      background: #2bbbad;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>&#128465;&#65039; GarbageSort&#43;</h1>
+    <nav>
+      <button class="tab-btn" data-target="home-section">&#127968; Home</button>
+      <button class="tab-btn" data-target="about-section">&#8505;&#65039; About</button>
+      <button class="tab-btn" data-target="rules-section">&#128221; Rules</button>
+      <button class="tab-btn" data-target="recycling-section">&#9851;&#65039; Recycling Ideas</button>
+      <button class="tab-btn" data-target="permissions-section">&#128274; Permissions</button>
+    </nav>
+  </header>
+  <main>
+    <div class="upload-box">
+      <h2>&#128228; Upload Waste Image</h2>
+      <input type="file" accept="image/*" />
+      <br />
+      <button>&#128269; Predict Class &amp; Eco Score</button>
+      <br />
+      <button>&#128190; Download CSV</button>
+    </div>
+    <section id="home-section" class="tab-content">
+      <h2>&#127968; Welcome to GarbageSort&#43;</h2>
+      <p>GarbageSort&#43; empowers communities to manage waste responsibly. Using machine learning, it classifies garbage into categories like cardboard, paper, glass, metal, plastic, and trash, providing a real-time eco-score.</p>
+      <p>Our aim is to make waste management smarter and sustainable using cutting-edge AI tools. Whether you are a student, a researcher, or a policymaker, GarbageSort&#43; can aid your recycling mission.</p>
+    </section>
+    <section id="about-section" class="tab-content">
+      <h2>&#8505;&#65039; About GarbageSort&#43;</h2>
+      <p>GarbageSort&#43; is a smart web-based waste classifier that leverages TensorFlow and ConvNeXt-based neural networks. Users upload an image of a waste item, and the model predicts the type of waste and its eco-score.</p>
+      <p>Eco-scores are designed to guide users about the recyclability and environmental impact of the waste. This platform is intended for students, researchers, and civic authorities aiming to create sustainable communities.</p>
+      <p>Developed as part of an advanced internship project, it bridges AI with environmental conservation in a user-friendly interface.</p>
+    </section>
+    <section id="rules-section" class="tab-content">
+      <h2>&#128221; Rules and Guidelines</h2>
+      <ul>
+        <li>&#9989; Upload images of only one item at a time for better accuracy.</li>
+        <li>&#128248; Ensure the item is clearly visible and centered.</li>
+        <li>&#10060; Avoid using offensive or copyrighted content.</li>
+        <li>&#128218; Use this application responsibly and for educational or civic purposes.</li>
+        <li>&#128100; Respect privacy policies and community guidelines.</li>
+      </ul>
+    </section>
+    <section id="recycling-section" class="tab-content">
+      <h2>&#9851;&#65039; Recycling Ideas</h2>
+      <ul>
+        <li>&#128230; Convert cardboard boxes into drawer organizers, bookshelves or cat houses.</li>
+        <li>&#127861; Reuse glass jars as spice containers, planters or fairy light lanterns.</li>
+        <li>&#128209; Turn newspaper into papier-mâché crafts, wall art or biodegradable seed pots.</li>
+        <li>&#128737;&#65039; Repurpose metal cans into lanterns, pencil holders, or hanging herb gardens.</li>
+        <li>&#128226; Organize a local recycling campaign or DIY waste art competition.</li>
+        <li>&#127795; Compost kitchen waste using a compost bin and use the soil for terrace gardens.</li>
+        <li>&#128161; Encourage eco clubs, reuse drives, and circular economy education in schools.</li>
+        <li>&#127963;&#65039; Collaborate with municipal corporations to automate waste segregation.</li>
+        <li>&#128214; Conduct workshops on reusability and upcycling techniques.</li>
+      </ul>
+    </section>
+    <section id="permissions-section" class="tab-content">
+      <h2>&#128274; Permissions &amp; Privacy</h2>
+      <p>GarbageSort&#43; does not store your images or personal data. All uploaded images are processed securely and immediately discarded. We encourage transparency and welcome contributions or audits.</p>
+      <p>By using this app, you agree to use it ethically and respect open-source contributions. Avoid uploading sensitive, personal, or illegal content.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 GarbageSort&#43; | Designed for sustainability and innovation.</p>
+  </footer>
+</body>
+</html>
